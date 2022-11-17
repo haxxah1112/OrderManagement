@@ -49,7 +49,7 @@ public class OrderResponse {
             orderItemResponse.itemId = orderItem.getItem().getId();
             orderItemResponse.orderId = orderItem.getOrder().getId();
             orderItemResponse.count = orderItem.getCount();
-            orderItemResponse.itemPrice = orderItemResponse.getItemPrice();
+            orderItemResponse.itemPrice = orderItem.getItemPrice();
             return orderItemResponse;
         }
 

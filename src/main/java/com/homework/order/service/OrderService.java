@@ -37,19 +37,21 @@ public class OrderService {
                 .collect(toList());
 
         List<Item> itemList = itemService.getItems(checkedItemIdList);
-
         for(Item item:itemList){
+            for(OrderItemDto orderItemDto:orderDto.getOrderItemList()) {
+                if(item.getId().equals(orderItemDto.getItemId())) {
+                    item.minusStockQuantity(orderItemDto.getCount());
+                    break;
+                }
+            }
             if("Y".equals(item.getUseYn())) {
                 if(item.getStockQuantity()<=0){
                     throw new CustomException(HttpStatus.BAD_REQUEST, item.getId()+"의 재고가 없습니다.");
-                } else {
-                    item.minusStockQuantity();
                 }
             }else{
                 throw new CustomException(HttpStatus.BAD_REQUEST, item.getId()+"를 구매할 수 없습니다.");
             }
         }
-
 
         List<OrderItem> orderItems = orderDto.getOrderItemList()
                 .stream()

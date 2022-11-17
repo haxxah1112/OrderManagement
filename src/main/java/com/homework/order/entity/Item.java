@@ -41,8 +41,8 @@ public class Item extends BaseEntity {
 
     }
 
-    public void minusStockQuantity() {
-        this.stockQuantity--;
+    public void minusStockQuantity(Long count) {
+        this.stockQuantity -= count;
     }
 
 }
