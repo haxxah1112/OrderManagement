@@ -42,7 +42,7 @@
 ------------- 
 
 > 4. 검증결과
-[RESTDocs 로 구현된 API 명세](https://haxxah1112.github.io/OrderManagement/index.html)
+>> [RESTDocs 로 구현된 API 명세](https://haxxah1112.github.io/OrderManagement/index.html)
 
 -------------  
    
